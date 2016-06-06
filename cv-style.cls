@@ -29,6 +29,7 @@
 \definecolor{green}{HTML}{A7E22E}
 \definecolor{purple}{HTML}{9358FE}
 \definecolor{aquamarine}{HTML}{36AF90}
+\definecolor{twitter}{RGB}{85,172,238}
 
 \definecolor{date}{HTML}{A4A4A4}
 
@@ -39,6 +40,7 @@
   \colorlet{green}{gray}
   \colorlet{purple}{gray}
   \colorlet{aquamarine}{gray}
+  \colorlet{twitter}{gray}
   \colorlet{fillheader}{white}
   \colorlet{header}{gray}
 \else
