@@ -117,7 +117,7 @@
 \setlength{\TPVertModule}{0.01\paperwidth}
 
 \newcommand{\lastupdated}{ 
-  \begin{textblock}{10}(11.3, 0.05)
+  \begin{textblock}{10}(11.3, 0.1)
     \raggedleft
     \fontsize{8pt}{10pt}\color{date}\thinfont 
     \lastupdatedtext{} \today
