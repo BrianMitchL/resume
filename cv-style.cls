@@ -146,12 +146,12 @@
 }
 
 \renewcommand{\section}[1]{
-  {\par\vspace{.5\parskip}
+  {\par\vspace{\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
     \@sectioncolor #1%
   }
-  \par\vspace{.5\parskip}}
+  \par\vspace{\parskip}}
 }
 
 \renewcommand{\subsection}[2]{
