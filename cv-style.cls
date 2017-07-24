@@ -55,7 +55,7 @@
 %----------------------------------------------------------------------------------------
 
 \RequirePackage[quiet]{fontspec}
-\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
+\RequirePackage{unicode-math}
 
 \newfontfamily\bodyfont[]{Helvetica Neue}
 \newfontfamily\bodyfontit[]{Helvetica Neue Light Italic}
