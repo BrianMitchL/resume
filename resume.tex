@@ -1,12 +1,8 @@
 \documentclass[]{cv-style} % Add 'print' as an option into the square bracket to remove colors from this template for printing
 
-\sethyphenation{english}{} % Add words between the {} to avoid them to be cut
-
-\usepackage{fontawesome5} % on macOS, you need to install FontAwesome.otf in Font Book
-
 \begin{document}
 
-\header{Brian}{Mitchell}
+\header{Brian}{Mitchell}{Software Engineer and Web Developer}
 \lastupdated
 
 %----------------------------------------------------------------------------------------
@@ -15,53 +11,48 @@
 
 \begin{aside} % In the aside, each new line forces a line break
 \section{contact}
-1125 W 28th St
+\small{1125 W 28th St
 Apt 308
 Minneapolis, MN 55408
-United States
+USA}
 ~
 +1 (612) 356-4590
 ~
 \href{mailto:bman4789@gmail.com}{bman4789@gmail.com}
+~
 \href{https://brianm.me}{https://brianm.me}
-\href{https://github.com/BrianMitchL}{\textcolor{darkgray}{\faIcon{github} }github/BrianMitchL}
+~
+\href{https://github.com/BrianMitchL}{\textcolor{darkgray}{\faIcon{github} }BrianMitchL}
 \href{https://twitter.com/BrianMitchL}{\textcolor{twitter}{\faIcon{twitter} }@BrianMitchL}
-\section{languages}
-JavaScript, TypeScript
-Python, Java
-CSS \& HTML5
-Bash, \LaTeX
-\section{frameworks \& tools}
-AngularJS, React
+\section{skills}
+TypeScript, JavaScript
+React, AngularJS
 D3, Highcharts
-Webpack
+\code{git}, Webpack
 Node.js, Jekyll
-Puppet, MongoDB
-Travis CI, Docker
-\section{software}
-\textcolor{gray}{\texttt{git}}, WebStorm
-PyCharm, Eclipse
-Xcode, Final Cut Pro X
-Logic Pro X
-\section{operating systems}
-macOS, Fedora
-REHL 7, Windows
+Python, Java
+HTML5, SCSS
+Bash, Travis CI
+Docker, \LaTeX
+Linux, Open Source
 \section{other}
 pair programming
 agile methodologies
-communication skills
+communication
+collaboration
+enthusiasm
 organization
+\section{interests}
+tech meetups
+front-end development
+scripting
+iOS development
 lighting design
-EOS family consoles
+podcasting
+alpine skiing
+biking, music
 \end{aside}
 
-%----------------------------------------------------------------------------------------
-%	SUMMARY SECTION
-%----------------------------------------------------------------------------------------
-\vspace{0.2cm}
-\section{summary}
-
-A skilled and knowledgeable developer proficient in web development and *nix systems. Detail oriented and strong interpersonal skills. Educated with a Bachelor's degree in Computer Science.
 
 %----------------------------------------------------------------------------------------
 %	WORK EXPERIENCE SECTION
@@ -96,8 +87,18 @@ A skilled and knowledgeable developer proficient in web development and *nix sys
 {2016--Now}
 {C.H. Robinson}
 {Eden Prairie, Minnesota}
-{\jobtitle{Business Intelligence Developer - Enterprise Data Warehouse} \\
-Implement and design the front end of business intelligence web applications. Tools: JavaScript, TypeScript, AngularJS, React, Webpack, D3, Highcharts, Bing Maps.}
+{\jobtitle[January 2018-Now]{Software Engineer II}
+\begin{itemize}
+    \item[--] Architected and lead the development of the React front-end for a new highly-scaling customer analytics platform.
+    \item[--] Built a complex multi-source user authentication and impersonation flow, developed new patterns using React hooks to reduce the amount of code, and built performant charting and table components utilizing TypeScript generics for displaying a wide range of data.
+    \item[--] Mentored across the company with JavaScript/TypeScript and React.
+    \item[--] Lead developer and publisher for the C.H. Robinson \href{https://engineering.chrobinson.com}{Engineering Blog}.
+\end{itemize}
+\jobtitle[November 2016-January 2018]{Software Engineer I}
+\begin{itemize}
+    \item[--] Built new widgets and lead major refactoring for a customer analytics tool to support additional segments of the company and powerful dynamic data filtering application-wide.
+    \item[--] Designed new and rewrote existing screens in an animation-focused data visualization tool for lobby displays leveraging AngularJS, D3, and Bing Maps.
+\end{itemize}}
 
 %------------------------------------------------
 
@@ -106,7 +107,7 @@ Implement and design the front end of business intelligence web applications. To
 {Independent Work}
 {\href{https://github.com/BrianMitchL/weatherBot}{https://github.com/BrianMitchL/weatherBot}}
 {\jobtitle{weatherBot} \\
-A Twitter bot for weather producing weather forecasts and current conditions. Written in Python and deployed with Docker. Live bot at \href{https://twitter.com/WeatherByBrian}{@WeatherByBrian}.}
+A Python-based Twitter bot for weather producing weather forecasts and current conditions. See \href{https://twitter.com/WeatherByBrian}{@WeatherByBrian}.}
 
 %------------------------------------------------
 
@@ -115,7 +116,7 @@ A Twitter bot for weather producing weather forecasts and current conditions. Wr
 {C.H. Robinson}
 {Eden Prairie, Minnesota}
 {\jobtitle{IT Intern} \\
-Developed an interactive lobby display illustrating active shipments on an animated world map, implemented with web technologies for touch-driven hardware.}
+Developed an interactive lobby display illustrating active shipments on an animated world map, built with web technologies for touch-driven hardware.}
 
 %------------------------------------------------
 
@@ -128,30 +129,12 @@ Improved efficiency of and supported the computer science labs. The labs consist
 
 %------------------------------------------------
 
-\entry
-{2014}
-{Info-Link, Inc.}
-{Morris, Minnesota}
-{\jobtitle{IT Specialist} \\
-Supported customers, repaired and maintained internal systems. Serviced and installed radios in homes, businesses, and various broadcasting towers.}
-
-%------------------------------------------------
-
-\entry
-{2012--2016}
-{University of Minnesota, Morris}
-{Morris, Minnesota}
-{\jobtitle{Student Center Tech Crew} (\jobtitle{Lighting Lead} 2014-2015 and Spring 2016) \\
-Led work calls and designed, set-­up, and operated sound and lighting for events.}
-
-%------------------------------------------------
-
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION SECTION
 %----------------------------------------------------------------------------------------
-\vspace{-0.2cm}
+
 \section{education}
 
 \begin{entrylist}
@@ -162,19 +145,20 @@ Led work calls and designed, set-­up, and operated sound and lighting for event
 {2012--2016}
 {Bachelor of Arts {\normalfont Computer Science}}
 {University of Minnesota, Morris}
-{\emph{Coursework}: \footnotesize{Robotics (C), Network Administration Practicum with an Emphasis on Directory Services, Models of Computing Systems (Bash, Ruby, C, Java), Human-Computer Interface Design (JavaScript), Algorithms and Computability (Java), Software Design and Development (JavaScript), Ethical and Social Implications of Technology, Data Structures (Java), Digital Media Computation (Python), Foundations of Computer Science, Calculus I--II, Statistical Methods}}
+{\small{Focused on Web Development and interpreted languages}}
 
 \entry
 {2015}
 {Study Abroad}
 {Danish Institute for Study Abroad, Copenhagen, Denmark}
-{\emph{Coursework}: \footnotesize{Artificial Intelligence, Danish Language I--II, Sustainable Development in Northern Europe}}
+{\small{Focused on Danish Language I--II, Artificial Intelligence, and Sustainable Development}}
+
 %------------------------------------------------
 
 \end{entrylist}
 
 %----------------------------------------------------------------------------------------
-%	OTHER SKILLS SECTION
+%	OTHER SECTION
 %----------------------------------------------------------------------------------------
 
 \section{other}
@@ -184,18 +168,18 @@ Led work calls and designed, set-­up, and operated sound and lighting for event
 %------------------------------------------------
 
 \entry
-{2016}
-{Oral Presentation {\normalfont \emph{with distinction}}}
-{Computer Science Senior Seminar Conference, Morris, Minnesota}
-{My survey analysis, \emph{Aggregating Information Based on Geolocated Twitter Data}.}
+{2019--Now}
+{Co-Organizer {\normalfont \href{https://javascriptmn.com}{JavaScriptMN}}}
+{Minneapolis, Minnesota}
+{A monthly meetup for JavaScript and related technologies.}
 
 %------------------------------------------------
 
 \entry
-{2016}
-{CarlHacks Hackathon}
-{Carleton College, Northfield, Minnesota}
-{Wrote a beats-per-minute tracking iOS application in Swift.}
+{2015--Now}
+{Co-Host {\normalfont \href{http://thenexus.tv/category/pk/}{PodKit}}}
+{Podcast}
+{A podcast about Apple inclined Web Developers discussing web development and technology in general.}
 
 %------------------------------------------------
 
@@ -220,13 +204,5 @@ Led work calls and designed, set-­up, and operated sound and lighting for event
 %%------------------------------------------------
 %
 %\end{entrylist}
-
-%----------------------------------------------------------------------------------------
-%	INTERESTS SECTION
-%----------------------------------------------------------------------------------------
-
-\section{interests}
-
-\textbf{professional:} web development and design, software development, scripting, iOS development, lighting design, theatrical electrician \textbf{personal:} podcasting, alpine skiing, music
 
 \end{document}

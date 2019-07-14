@@ -3,7 +3,6 @@
 \ProvidesClass{cv-style}[2015/02/27 CV class]
 \NeedsTeXFormat{LaTeX2e}
 
-\DeclareOption{espanol}{\def\@cv@espanol{}}
 \DeclareOption{print}{\def\@cv@print{}}
 \DeclareOption*{%
   \PassOptionsToClass{\CurrentOption}{article}%
@@ -56,17 +55,24 @@
 
 \RequirePackage[quiet]{fontspec}
 \RequirePackage{unicode-math}
+\RequirePackage{fontawesome5}
 
-\newfontfamily\bodyfont[]{Helvetica Neue}
-\newfontfamily\bodyfontit[]{Helvetica Neue Light Italic}
-\newfontfamily\thinfont[]{Helvetica Neue UltraLight}
-\newfontfamily\headingfont[]{Helvetica Neue Condensed Bold}
+% must download and install from https://developer.apple.com/fonts/
+\newfontfamily\bodyfont[]{SF Pro Text Regular}
+\newfontfamily\bodyfontit[]{SF Pro Text Light Italic}
+\newfontfamily\thinfont[]{SF Pro Text Thin}
+\newfontfamily\headingfont[]{SF Pro Text Bold}
+\newfontfamily\monospacefont[]{Dank Mono}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{Helvetica Neue Light}
+\setmainfont[Mapping=tex-text, Color=textcolor]{SF Pro Text Light}
 
 \newcommand{\italica}[1]{%
     {\color{gray}\bodyfontit #1}%
+}
+
+\newcommand{\code}[1]{%
+    {\color{gray}\monospacefont #1}%
 }
 
 %----------------------------------------------------------------------------------------
@@ -81,15 +87,19 @@
   \color{white}%
 }
 
-\newcommand{\header}[2]{%
+\newcommand{\header}[3]{%
   \begin{tikzpicture}[remember picture,overlay]
-    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=2cm] (box) at (current page.north){};
+    \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=3cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
-      \fontsize{40pt}{65pt}\color{header}%
+      \fontsize{40pt}{72pt}\color{header}%
       {\thinfont #1}{\bodyfont  #2}
     };
+    \node [anchor=north] at (name.south) {%
+      \fontsize{14pt}{24pt}\color{header}%
+      \thinfont #3%
+    };
   \end{tikzpicture}
-  \vspace{1cm}
+  \vspace{1.5cm}
   \vspace{-2\parskip}
 }
 
@@ -100,27 +110,14 @@
 \RequirePackage[absolute,overlay]{textpos}
 \RequirePackage{polyglossia}
 
-\newcommand{\sethyphenation}[3][]{%
-  \sbox0{\begin{otherlanguage}[#1]{#2}
-    \hyphenation{#3}\end{otherlanguage}}}
-%\sethyphenation[<options>]{<language>}{<list of words separated by spaces>}
-
-\ifdefined\@cv@espanol
-  \setdefaultlanguage{spanish}
-  \def\lastupdatedtext{Última Actualización el}
-\else
-  \setdefaultlanguage[variant=british]{english}
-  \def\lastupdatedtext{Last Updated on}
-\fi
-
 \setlength{\TPHorizModule}{0.01\paperwidth}
 \setlength{\TPVertModule}{0.01\paperwidth}
 
 \newcommand{\lastupdated}{ 
   \begin{textblock}{10}(11.3, 0.2)
     \raggedleft
-    \fontsize{8pt}{10pt}\color{date}\thinfont 
-    \lastupdatedtext{} \today
+    \fontsize{10pt}{12pt}\color{date}\thinfont 
+    Updated on \today
   \end{textblock}}
 
 %----------------------------------------------------------------------------------------
@@ -160,8 +157,10 @@
   \par\vspace{.25\parskip}%
 }
 
-\newcommand{\jobtitle}[1]{%
-    {\color{gray}\bodyfontit #1}%
+\newcommand{\jobtitle}[2][]{%
+    {\color{gray}\bodyfontit #2}%
+    \hfill%
+    {\footnotesize\addfontfeature{Color=lightgray} #1}
 }
 
 \pagestyle{empty}
@@ -178,7 +177,7 @@
 }
 \renewcommand{\bfseries}{\headingfont\color{headercolor}}
 \newcommand{\entry}[4]{%
-  #1&\parbox[t]{12.8cm}{%
+  #1&\parbox[t]{11.8cm}{%
     \textbf{#2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #3}\\%
@@ -189,6 +188,7 @@
 % Side block %
 %----------------------------------------------------------------------------------------
 
+\RequirePackage[absolute,overlay]{textpos}
 \setlength{\TPHorizModule}{1cm}
 \setlength{\TPVertModule}{1cm}
 \newenvironment{aside}{%
@@ -196,7 +196,7 @@
   \renewcommand{\section}[1]{
     \par\vspace{\baselineskip}{\Large\headingfont\color{headercolor} ##1}
   }
-  \begin{textblock}{3.6}(1, 1.87)
+  \begin{textblock}{3.6}(1.5, 3.33)
   \begin{flushright}
   \obeycr
 }{%
@@ -210,10 +210,18 @@
 % Other tweaks %
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[left=5.6cm,top=1cm,right=1cm,bottom=1cm,nohead,nofoot]{geometry}
+\RequirePackage{enumitem}
+\setlist[itemize]{leftmargin=5.5mm}
+
+% used for formatting updated date to ISO format
+\RequirePackage{datetime2}
+
+
+\RequirePackage[left=6.1cm,top=2cm,right=1.5cm,bottom=1cm,nohead,nofoot]{geometry}
 \RequirePackage{hyperref}
 \hypersetup{
-    pdftitle=CV/Resume \textbar{} Brian Mitchell,
-    pdfauthor=Brian Mitchell,
-    pdfsubject=CV/Resume%
-    }
+    colorlinks=true, % while it is set to color links, it doesn't actually do that, but it disables the border, which is what we want
+    pdftitle={CV/Resume \textbar{} Brian Mitchell},
+    pdfauthor={Brian Mitchell},
+    pdfsubject={CV/Resume}
+}
