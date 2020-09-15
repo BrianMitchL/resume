@@ -26,6 +26,6 @@
 *.mtc
 *.mtc1
 *.out
-*.synctex.gz
+*.synctex.*
 
 .DS_Store

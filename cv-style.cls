@@ -18,13 +18,14 @@
 
 \definecolor{white}{RGB}{255,255,255}
 
-\definecolor{darkgray}{HTML}{333333}
-\definecolor{gray}{HTML}{4D4D4D}
-\definecolor{lightgray}{HTML}{999999}
+\definecolor{darkgray}{HTML}{262626}
+\definecolor{mediumgray}{HTML}{444444}
+\definecolor{gray}{HTML}{555555}
+\definecolor{lightgray}{HTML}{888888}
 
-\definecolor{blue}{HTML}{66D9EE}
-\definecolor{red}{HTML}{FA2772}
-\definecolor{orange}{HTML}{FE9720}
+\definecolor{blue}{HTML}{3399FF}
+\definecolor{red}{HTML}{F0506E}
+\definecolor{orange}{HTML}{FF9419}
 \definecolor{green}{HTML}{A7E22E}
 \definecolor{purple}{HTML}{9358FE}
 \definecolor{aquamarine}{HTML}{36AF90}
@@ -32,22 +33,24 @@
 
 \definecolor{date}{HTML}{A4A4A4}
 
+
+\colorlet{textcolor}{gray}
+\colorlet{headercolor}{mediumgray}
+
 \ifdefined\@cv@print
-  \colorlet{blue}{gray}
-  \colorlet{red}{gray}
-  \colorlet{orange}{gray}
-  \colorlet{green}{gray}
-  \colorlet{purple}{gray}
-  \colorlet{aquamarine}{gray}
+  \colorlet{blue}{headercolor}
+  \colorlet{red}{headercolor}
+  \colorlet{orange}{headercolor}
+  \colorlet{green}{headercolor}
+  \colorlet{purple}{headercolor}
+  \colorlet{aquamarine}{headercolor}
   \colorlet{twitter}{gray}
   \colorlet{fillheader}{white}
-  \colorlet{header}{gray}
+  \colorlet{header}{darkgray}
 \else
-  \colorlet{fillheader}{gray}
+  \colorlet{fillheader}{darkgray}
   \colorlet{header}{white}
 \fi
-\colorlet{textcolor}{gray}
-\colorlet{headercolor}{gray}
 
 %----------------------------------------------------------------------------------------
 % Fonts %
@@ -57,15 +60,16 @@
 \RequirePackage{unicode-math}
 \RequirePackage{fontawesome5}
 
-% must download and install from https://developer.apple.com/fonts/
-\newfontfamily\bodyfont[]{SF Pro Text Regular}
-\newfontfamily\bodyfontit[]{SF Pro Text Light Italic}
-\newfontfamily\thinfont[]{SF Pro Text Thin}
-\newfontfamily\headingfont[]{SF Pro Text Bold}
-\newfontfamily\monospacefont[]{Dank Mono}
+% download and install Inter from https://rsms.me/inter/
+\newfontfamily\bodyfont[]{Inter Regular}
+\newfontfamily\bodyfontit[]{Inter Italic}
+\newfontfamily\thinfont[]{Inter Extra Light}
+\newfontfamily\headingfont[]{Inter Bold}
+% https://github.com/tonsky/FiraCode
+\newfontfamily\monospacefont[]{Fira Code Regular}
 
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Mapping=tex-text, Color=textcolor]{SF Pro Text Light}
+\setmainfont[Mapping=tex-text, Color=textcolor]{Inter Light}
 
 \newcommand{\italica}[1]{%
     {\color{gray}\bodyfontit #1}%
@@ -92,7 +96,7 @@
     \node [rectangle, fill=fillheader, anchor=north, minimum width=\paperwidth, minimum height=3cm] (box) at (current page.north){};
     \node [anchor=center] (name) at (box) {%
       \fontsize{40pt}{72pt}\color{header}%
-      {\thinfont #1}{\bodyfont  #2}
+      {\headingfont #1 #2}
     };
     \node [anchor=north] at (name.south) {%
       \fontsize{14pt}{24pt}\color{header}%
@@ -158,7 +162,7 @@
 }
 
 \newcommand{\jobtitle}[2][]{%
-    {\color{gray}\bodyfontit #2}%
+    {\color{mediumgray}\bodyfontit #2}%
     \hfill%
     {\footnotesize\addfontfeature{Color=lightgray} #1}
 }
