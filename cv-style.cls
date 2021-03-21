@@ -128,6 +128,7 @@
 % Structure %
 %----------------------------------------------------------------------------------------
 \RequirePackage{parskip}
+\usepackage[none]{hyphenat}
 
 \newcounter{colorCounter}
 \def\@sectioncolor#1#2#3{%
@@ -147,18 +148,18 @@
 }
 
 \renewcommand{\section}[1]{
-  {\par\vspace{\parskip}
+  {\par\vspace{0.75\parskip}
   {%
     \LARGE\headingfont\color{headercolor}%
     \@sectioncolor #1%
   }
-  \par\vspace{\parskip}}
+  \par\vspace{0.5\parskip}}
 }
 
 \renewcommand{\subsection}[2]{
-  \par\vspace{.5\parskip}%
+  \par\vspace{0.5\parskip}%
   \Large\headingfont\color{headercolor} #2%
-  \par\vspace{.25\parskip}%
+  \par\vspace{0.25\parskip}%
 }
 
 \newcommand{\jobtitle}[2][]{%
