@@ -58,15 +58,12 @@
 
 \RequirePackage[quiet]{fontspec}
 \RequirePackage{unicode-math}
-\RequirePackage{fontawesome5}
 
-% download and install Inter from https://rsms.me/inter/
-\newfontfamily\bodyfont[]{Inter Regular}
-\newfontfamily\bodyfontit[]{Inter Italic}
-\newfontfamily\thinfont[]{Inter Extra Light}
-\newfontfamily\headingfont[]{Inter Bold}
-% https://github.com/tonsky/FiraCode
-\newfontfamily\monospacefont[]{Fira Code Regular}
+\newfontfamily\bodyfont[]{Satoshi Regular}
+\newfontfamily\bodyfontit[]{Satoshi Italic}
+\newfontfamily\thinfont[]{Satoshi Light}
+\newfontfamily\headingfont[]{Space Grotesk Bold}
+\newfontfamily\monospacefont[]{Berkeley Mono}
 
 \defaultfontfeatures{Mapping=tex-text}
 \setmainfont[Mapping=tex-text, Color=textcolor]{Inter Light}
